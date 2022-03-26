@@ -1,24 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2015
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StackExchange.Precompilation.Build", "StackExchange.Precompilation.Build\StackExchange.Precompilation.Build.csproj", "{31DFCCCC-2F44-405E-A2D7-BB1AC718E7B9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StackExchange.Precompilation", "StackExchange.Precompilation\StackExchange.Precompilation.csproj", "{3C0A90F1-B19E-4305-AB71-3CD31C7D0F4D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5958EFE5-C8D6-4759-9A8E-8C64558314FD}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Module", "Test.Module\Test.Module.csproj", "{5FCAECC3-787B-473F-A372-783D0C235190}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.ConsoleApp", "Test.ConsoleApp\Test.ConsoleApp.csproj", "{BA716DA2-4E3C-4D9F-B9C2-78C0EAEF66D7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{31DFCCCC-2F44-405E-A2D7-BB1AC718E7B9} = {31DFCCCC-2F44-405E-A2D7-BB1AC718E7B9}
+	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.WebApp", "Test.WebApp\Test.WebApp.csproj", "{5B0105A4-256B-4A88-852C-6F5E9D185515}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.WebApp", "Test.WebApp\Test.WebApp.csproj", "{5B0105A4-256B-4A88-852C-6F5E9D185515}"
 	ProjectSection(ProjectDependencies) = postProject
 		{31DFCCCC-2F44-405E-A2D7-BB1AC718E7B9} = {31DFCCCC-2F44-405E-A2D7-BB1AC718E7B9}
 	EndProjectSection

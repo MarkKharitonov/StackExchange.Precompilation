@@ -2,7 +2,7 @@
   <PropertyGroup>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <IsPackable>false</IsPackable> <!-- enabled on each packable project exlpicitly -->
+    <IsPackable>false</IsPackable> <!-- enabled on each packable project explicitly -->
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -11,13 +11,17 @@
     <Authors>m0sa</Authors>
     <Copyright>Stack Exchange 2017</Copyright>
     <PackageTags>Razor AspNet MsBuild Roslyn Metaprogramming</PackageTags>
-    <RepositoryUrl>https://github.com/StackExchange/StackExchange.Precompilation.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/MarkKharitonov/StackExchange.Precompilation</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <ProjectUrl>https://github.com/StackExchange/StackExchange.Precompilation</ProjectUrl>
     <PackageReleaseNotes><![CDATA[
+Version 6.1.0
+* updating roslyn packages to 4.1.0
+* updating mvc packages to 5.2.7
+
 Version 5.1.0
 * updating roslyn packages to 2.10.0
-* updating mvc packages to 5.2.7
+* updating mvc packages to 5.2.3
 * fixing SourceLink support for native pdbs
 
 Version 5.0.0

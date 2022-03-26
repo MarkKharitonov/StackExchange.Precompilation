@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net462;netstandard20</TargetFrameworks>
+    <TargetFramework>net472</TargetFramework>
     <Description>Hooks into the ASP.NET MVC pipeline to enable usage of C# 7.2, and views precompiled with StackExchange.Precompilation.Build</Description>
     <IsPackable>true</IsPackable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.4.1" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="2.10.0" ExcludeAssets="analyzers"/>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.1.0" ExcludeAssets="analyzers" />
   </ItemGroup>
 </Project>

@@ -10,3 +10,4 @@ tools
 packages
 .vs
 _ReSharper*
+/Test.ConsoleApp/Properties/launchSettings.json

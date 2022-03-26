@@ -1,5 +1,4 @@
-﻿#if NET462
-extern alias aliastest;
+﻿extern alias aliastest;
 
 namespace Test.ConsoleApp
 {
@@ -8,4 +7,3 @@ namespace Test.ConsoleApp
         public const string DataSet = nameof(aliastest::System.Data.DataSet);
     }
 }
-#endif

@@ -31,7 +31,11 @@ namespace StackExchange.Precompilation
     {
         private readonly Workspace _workspace;
         private readonly WebConfigurationFileMap _configMap;
+#pragma warning disable CS0649
+#pragma warning disable IDE1006 // Naming Styles
         private readonly DirectoryInfo _cacheDirectory;
+#pragma warning restore IDE1006 // Naming Styles
+#pragma warning restore CS0649
         private readonly BlockingCollection<RazorTextLoader> _workItems;
         private readonly Lazy<Task> _backgroundWorkers;
         private readonly CancellationToken _cancellationToken;

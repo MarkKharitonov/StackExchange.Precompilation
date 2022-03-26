@@ -264,7 +264,7 @@ namespace StackExchange.Precompilation
 
         private class CompilationAnalyzerAssemblyLoader : IAnalyzerAssemblyLoader
         {
-            private static Type DesktopAssemblyLoader = Type.GetType("Microsoft.CodeAnalysis.DesktopAnalyzerAssemblyLoader, Microsoft.CodeAnalysis.Workspaces.Desktop");
+            private static Type DesktopAssemblyLoader = Type.GetType("Microsoft.CodeAnalysis.DefaultAnalyzerAssemblyLoader, Microsoft.CodeAnalysis.Workspaces");
             private static IAnalyzerAssemblyLoader _desktopLoader = (IAnalyzerAssemblyLoader)Activator.CreateInstance(DesktopAssemblyLoader);
 
             private string ResolvePath(string path) => Path.IsPathRooted(path) ? path : Path.GetFullPath(path);
@@ -280,7 +280,6 @@ namespace StackExchange.Precompilation
             {
                 "Microsoft.CodeAnalysis.Workspaces",
                 "Microsoft.CodeAnalysis.CSharp.Workspaces",
-                "Microsoft.CodeAnalysis.Workspaces.Desktop",
                 "StackExchange.Precompilation.MVC5",
             };
 
