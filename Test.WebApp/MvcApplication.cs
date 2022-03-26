@@ -14,11 +14,11 @@ namespace Test.WebApp
 
     public class MvcApplication : HttpApplication
     {
-        public static bool IsDebug =>
-#if DEBUG
+        public const bool SE_PRECOMPILER_INCLUDE_RAZOR =
+#if SE_PRECOMPILER_INCLUDE_RAZOR
             true;
 #else
-                false;
+            false;
 #endif
 
         protected void Application_Start()
@@ -34,8 +34,8 @@ namespace Test.WebApp
             );
 
             ViewEngines.Engines.Clear();
-#if !DEBUG
-// use precompiled engine first (supports some C# 6),
+#if SE_PRECOMPILER_INCLUDE_RAZOR
+            // use precompiled engine first (supports some C# 6),
             ViewEngines.Engines.Add(new PrecompiledViewEngine(typeof(HomeController).Assembly, typeof(ExternalViews).Assembly));
 #endif
             // fallback to RoslynRazorViewEngine (RazorViewEngine doesn't support C# 6).

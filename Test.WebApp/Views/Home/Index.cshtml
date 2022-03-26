@@ -14,7 +14,7 @@ Precompiled View Paths:
 @Html.Partial("../Other/../Other/RelativePartial")
 @Helpers.Test()
 
-@if (!MvcApplication.IsDebug)
+@if (MvcApplication.SE_PRECOMPILER_INCLUDE_RAZOR)
 {
     @Html.Partial("ExternalPartial");
 }

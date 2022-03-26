@@ -33,34 +33,39 @@ namespace StackExchange.Precompilation
         /// </summary>
         public RoslynRazorViewEngine()
         {
-            AreaViewLocationFormats = new[] {
+            AreaViewLocationFormats = new[]
+            {
                 "~/Areas/{2}/Views/{1}/{0}.cshtml",
-                "~/Areas/{2}/Views/Shared/{0}.cshtml"
+                "~/Areas/{2}/Views/Shared/{0}.cshtml",
             };
-
-            AreaMasterLocationFormats = new[] {
+            AreaMasterLocationFormats = new[]
+            {
                 "~/Areas/{2}/Views/{1}/{0}.cshtml",
-                "~/Areas/{2}/Views/Shared/{0}.cshtml"
+                "~/Areas/{2}/Views/Shared/{0}.cshtml",
             };
-
-            AreaPartialViewLocationFormats = new[] {
+            AreaPartialViewLocationFormats = new[]
+            {
                 "~/Areas/{2}/Views/{1}/{0}.cshtml",
-                "~/Areas/{2}/Views/Shared/{0}.cshtml"
+                "~/Areas/{2}/Views/Shared/{0}.cshtml",
             };
-            ViewLocationFormats = new[] {
+            FileExtensions = new[]
+            {
+                "cshtml",
+            };
+            MasterLocationFormats = new[]
+            {
                 "~/Views/{1}/{0}.cshtml",
-                "~/Views/Shared/{0}.cshtml"
+                "~/Views/Shared/{0}.cshtml",
             };
-            MasterLocationFormats = new[] {
+            PartialViewLocationFormats = new[]
+            {
                 "~/Views/{1}/{0}.cshtml",
-                "~/Views/Shared/{0}.cshtml"
+                "~/Views/Shared/{0}.cshtml",
             };
-            PartialViewLocationFormats = new[] {
+            ViewLocationFormats = new[]
+            {
                 "~/Views/{1}/{0}.cshtml",
-                "~/Views/Shared/{0}.cshtml"
-            };
-            FileExtensions = new[] {
-                "cshtml"
+                "~/Views/Shared/{0}.cshtml",
             };
         }
 

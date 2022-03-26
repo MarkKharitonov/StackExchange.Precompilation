@@ -20,10 +20,10 @@
     <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <Optimize>false</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -31,7 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -94,8 +93,8 @@
   </ProjectExtensions>
   <PropertyGroup>
     <SEPrecompilerPath Condition="'$(SEPrecompilerPath)' == ''">$(SolutionDir)StackExchange.Precompilation.Build\bin\$(Configuration)\net472\</SEPrecompilerPath>
-    <!-- Using DEBUG build configuration to test RoslynRazorViewEngine in VS, SECompilerPath is set in the build script  -->
-    <SEPrecompilerIncludeRazor Condition="'$(Configuration)' == 'Release' or '(SECompilerPath)' != ''">true</SEPrecompilerIncludeRazor>
+    <SEPrecompilerIncludeRazor Condition="'$(Configuration)' == 'Release' And '$(SEPrecompilerIncludeRazor)' == ''">true</SEPrecompilerIncludeRazor>
+    <DefineConstants Condition="'$(SEPrecompilerIncludeRazor)' == true">$(DefineConstants);SE_PRECOMPILER_INCLUDE_RAZOR</DefineConstants>
   </PropertyGroup>
   <Import Project="..\StackExchange.Precompilation.Build\StackExchange.Precompilation.Build.targets" />
   <Target Name="Pack">
