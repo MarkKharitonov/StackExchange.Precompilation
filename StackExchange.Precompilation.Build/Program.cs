@@ -1,8 +1,5 @@
 ﻿using System;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using Microsoft.CodeAnalysis.CSharp;
+using System.Diagnostics;
 
 namespace StackExchange.Precompilation
 {
@@ -10,6 +7,11 @@ namespace StackExchange.Precompilation
     {
         static void Main(string[] args)
         {
+            if (Environment.GetEnvironmentVariable("SE_DEBUG_PRECOMPILER") == "1")
+            {
+                Debugger.Launch();
+            }
+
             try
             {
                 if (!CompilationProxy.RunCs(args))

@@ -1,11 +1,9 @@
 param(
-    [parameter(Position=0)]
     [string] $VersionSuffix,
-    [parameter(Position=1)]
     [string] $GitCommitId,
-    [parameter(Position=2)]
     [string[]] $MsBuildArgs,
-    [switch] $CIBuild
+    [switch] $CIBuild,
+    [switch] $Debug
 )
 
 if (-not $semver)
@@ -28,13 +26,19 @@ if(-not $GitCommitId)
     $GitCommitId = $(git rev-parse HEAD)
 }
 
+$Configuration = 'Release'
+if ($Debug)
+{
+    $Configuration = 'Debug'
+}
+
 $solutionDir = "$((Resolve-Path .).Path)\"
 $defaultArgs = "/v:m", "/nologo",
     "/p:SolutionDir=$solutionDir",
     "/p:RepositoryCommit=$GitCommitId",
     "/p:Version=$version",
-    "/p:Configuration=Release",
-    "/p:SEPrecompilerPath=$solutionDir\StackExchange.Precompilation.Build\bin\Release\net472"
+    "/p:Configuration=$Configuration",
+    "/p:SEPrecompilerPath=$solutionDir\StackExchange.Precompilation.Build\bin\$Configuration\net472"
 if ($MsBuildArgs)
 {
     $defaultArgs += $MsBuildArgs
@@ -47,7 +51,7 @@ if ($LastExitCode -ne 0)
     throw "MSBuild failed"
 }
 
-.\Test.ConsoleApp\bin\Release\net472\Test.ConsoleApp.exe
+& ".\Test.ConsoleApp\bin\$Configuration\net472\Test.ConsoleApp.exe"
 
 if ($LastExitCode -ne 0)
 {

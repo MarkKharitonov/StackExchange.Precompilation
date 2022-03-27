@@ -3,10 +3,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <IsPackable>false</IsPackable> <!-- enabled on each packable project explicitly -->
-  </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugType>embedded</DebugType>
     <PackageOutputPath>$(SolutionDir)packages\obj\</PackageOutputPath>
     <Authors>m0sa</Authors>
     <Copyright>Stack Exchange 2017</Copyright>
