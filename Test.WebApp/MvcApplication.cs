@@ -1,6 +1,8 @@
+using System;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Common.Logging;
 using StackExchange.Precompilation;
 using Test.WebApp.Controllers;
 
@@ -23,6 +25,9 @@ namespace Test.WebApp
 
         protected void Application_Start()
         {
+            var log = LogManager.GetLogger(GetType());
+            log.Info($"Referencing {typeof(LogManager).Assembly} because it depends on mscorlib 2.0.5.0");
+
             AreaRegistration.RegisterAllAreas();
             GlobalFilters.Filters.Add(new HandleErrorAttribute());
 
